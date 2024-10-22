@@ -15,5 +15,6 @@ FROM
     INFORMATION_SCHEMA.COLUMNS
 WHERE 
     TABLE_NAME = 'Books'
+    AND TABLE_SCHEMA = 'alx_book_store'  -- Added condition for TABLE_SCHEMA
 ORDER BY 
     ORDINAL_POSITION;
