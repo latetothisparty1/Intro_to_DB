@@ -16,14 +16,14 @@ def create_database():
             cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
             print("Database 'alx_book_store' created successfully!")
 
-    except Error as e:
+    except mysql.connector.Error as e:  # Updated to specifically catch mysql.connector.Error
         print(f"Error: {e}")
 
     finally:
         # Close the cursor and connection
-        if cursor:
+        if 'cursor' in locals():
             cursor.close()
-        if connection and connection.is_connected():
+        if 'connection' in locals() and connection.is_connected():
             connection.close()
 
 if __name__ == "__main__":
