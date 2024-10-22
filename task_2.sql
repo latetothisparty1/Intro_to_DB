@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS Books (
 -- Create customers table
 CREATE TABLE IF NOT EXISTS Customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_name VARCHAR(215) NOT NULL,  -- Updated to customer_name
-    email VARCHAR(215) UNIQUE NOT NULL,    -- Updated to email with length 215
+    customer_name VARCHAR(215) NOT NULL,
+    email VARCHAR(215) UNIQUE NOT NULL,
     phone VARCHAR(15),
     address TEXT
 );
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS Order_details (
     order_detail_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
     book_id INT,
-    quantity INT NOT NULL,
+    quantity DOUBLE NOT NULL,  -- Updated to DOUBLE
     price DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (order_id) REFERENCES Orders(order_id),
     FOREIGN KEY (book_id) REFERENCES Books(book_id)
