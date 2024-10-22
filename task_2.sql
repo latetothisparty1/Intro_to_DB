@@ -1,5 +1,5 @@
 -- Create authors table
-CREATE TABLE IF NOT EXISTS authors (
+CREATE TABLE IF NOT EXISTS Authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
     author_name VARCHAR(100) NOT NULL,  -- Updated to author_name
     bio TEXT,
